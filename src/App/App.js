@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import FEATURES from './FEATURES';
 
 import './App.css';
-import FeaturesList from './FeaturesList';
-import Summary from './Summary';
-import Header from './Header';
+import FeaturesList from './FeatureList/FeaturesList';
+import Summary from './Summary/Summary';
+import Header from './Header/Header';
 
 // This object will allow us to
 // easily convert numbers into US dollar values

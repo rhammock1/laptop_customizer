@@ -1,7 +1,8 @@
 import React from 'react';
 import slugify from 'slugify';
-import FeatureOption from './FeatureOption';
-import FEATURES from './FEATURES';
+import FeatureOption from './FeatureOption/FeatureOption';
+import FEATURES from '../../FEATURES';
+import './FeatureField.css';
 
 const FeatureField = function(props) {
   

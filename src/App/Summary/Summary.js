@@ -1,6 +1,7 @@
 import React from 'react';
-import Cart from './Cart';
-import Total from './Total';
+import Cart from './Cart/Cart';
+import Total from './Total/Total';
+import './Summary.css';
 
 const Summary = function(props) {
   

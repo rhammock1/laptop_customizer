@@ -1,6 +1,6 @@
 import React from 'react';
-import slugify from 'slugify';
-import FeatureField from './FeatureField';
+import './FeatureList.css'
+import FeatureField from './FeatureField/FeatureField';
 
 
 

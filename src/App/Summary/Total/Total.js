@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Total.css';
 
 const Total = function(props) {
   const total = Object.keys(props.selected).reduce(
