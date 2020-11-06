@@ -15,7 +15,7 @@ describe('FeatureField component', () => {
 });
   it('renders without crashing with props', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<FeatureField featureHash feature option/>, div);
+    ReactDOM.render(<FeatureField key feature features option/>, div);
     ReactDOM.unmountComponentAtNode(div);
 });
   

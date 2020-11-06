@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-
-// Normalizes string as a slug - a string that is safe to use
-// in both URLs and html attributes
-import slugify from 'slugify';
+import FEATURES from './FEATURES';
 
 import './App.css';
 import FeaturesList from './FeaturesList';
+import Summary from './Summary';
+import Header from './Header';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -47,48 +46,21 @@ class App extends Component {
   };
 
   render() {
-    
-
-    const summary = Object.keys(this.state.selected).map((feature, idx) => {
-      const featureHash = feature + '-' + idx;
-      const selectedOption = this.state.selected[feature];
-
-      return (
-        <div className="summary__option" key={featureHash}>
-          <div className="summary__option__label">{feature} </div>
-          <div className="summary__option__value">{selectedOption.name}</div>
-          <div className="summary__option__cost">
-            {this.USCurrencyFormat.format(selectedOption.cost)}
-          </div>
-        </div>
-      );
-    });
-
-    const total = Object.keys(this.state.selected).reduce(
-      (acc, curr) => acc + this.state.selected[curr].cost,
-      0
-    );
 
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
+        <Header />
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            <FeaturesList USCurrencyFormat={this.USCurrencyFormat} updateFeature={this.updateFeature} selected={this.state.selected}/>
-          </form>
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {this.USCurrencyFormat.format(total)}
-              </div>
-            </div>
-          </section>
+          <FeaturesList 
+            USCurrencyFormat={this.USCurrencyFormat} 
+            updateFeature={this.updateFeature} selected={this.state.selected}
+            features={FEATURES} 
+          />
+          <Summary 
+            USCurrencyFormat={this.USCurrencyFormat}
+            selected={this.state.selected}
+          />
+          
         </main>
       </div>
     );
