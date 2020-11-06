@@ -1,5 +1,6 @@
 import React from 'react';
 import slugify from 'slugify';
+import FeatureField from './FeatureField';
 
 const FEATURES = {
   Processor: [
@@ -67,15 +68,34 @@ const FeaturesList = function(props) {
       });
 
       return (
-        <fieldset className="feature" key={featureHash}>
-          <legend className="feature__name">
-            <h3>{feature}</h3>
-          </legend>
-          {options}
-        </fieldset>
+        <FeatureField featureHash={featureHash} feature={feature} options={options}/>
       );
     });
     return features;
 }
 
+FeaturesList.defaultProps = {
+  selected: {
+    Processor: {
+        name: '17th Generation Intel Core HB (7 Core with donut spare)',
+        cost: 700
+      },
+      'Operating System': {
+        name: 'Ubuntu Linux 16.04',
+        cost: 200
+      },
+      'Video Card': {
+        name: 'Toyota Corolla 1.5v',
+        cost: 1150.98
+      },
+      Display: {
+        name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
+        cost: 1500
+      }
+  },
+  USCurrencyFormat: new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+})
+}
 export default FeaturesList;
