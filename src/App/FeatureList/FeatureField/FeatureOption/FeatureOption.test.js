@@ -8,11 +8,6 @@ describe('FeatureOption component', () => {
     ReactDOM.render(<FeatureOption />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
-  it('renders without crashing without props', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<FeatureOption />, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
 
   
 })

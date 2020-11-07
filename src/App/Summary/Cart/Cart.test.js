@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FeaturesList from './FeaturesList';
+import Cart from './Cart';
 
-describe('FeaturesList component', () => {
+describe('Cart component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<FeaturesList />, div);
+    ReactDOM.render(<Cart />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
   

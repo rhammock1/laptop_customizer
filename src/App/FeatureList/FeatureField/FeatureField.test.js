@@ -8,16 +8,6 @@ describe('FeatureField component', () => {
     ReactDOM.render(<FeatureField />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
-  it('renders without crashing without props', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<FeatureField />, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
-  it('renders without crashing with props', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<FeatureField key feature features option/>, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
   
 })
 
